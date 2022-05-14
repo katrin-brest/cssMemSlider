@@ -4,21 +4,20 @@
     box-sizing: border-box;
  }
     
-    body {
+body {
         background-color: #857e1e;
+}
+   
+.slider-container {
+    max-width: 70vw;
+    display: grid;
+    width: 100%;
+    height: 100% ;
+    row-gap: 2em;
+    grid-template-columns: 1fr 1fr;
+    margin: 5vh auto;
+    overflow: hidden;
     }
-       
-    
-    .slider-container {
-        max-width: 70vw;
-        display: grid;
-        width: 100%;
-        height: 100% ;
-        row-gap: 2em;
-        grid-template-columns: 1fr 1fr;
-        margin: 5vh auto;
-        overflow: hidden;
-      }
     
     .image-cont {
         grid-column: 1/3;
@@ -34,7 +33,7 @@
         background-repeat: no-repeat;
         width: 20%;
         height: 100%;
-        transition:0.8s;
+        transition:ease-in-out 0.8s;
         opacity: 0;
         z-index: 0;
         }
@@ -64,7 +63,7 @@
         width: 500%;
         height: 100%;
         margin-left: -400%;
-        transition: 0.8s;
+        transition: ease-in-out 0.8s;
     }
 
     .text {
@@ -92,23 +91,23 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 22px;
-        width: 22px;
-        margin-left:15px;
-        padding: 3px;
+        height: 1.6em;
+        width: 1.6em;
+        margin-left: 1.1em;
+        padding: 0.4em;
         position: relative;
     }
     
     .inner-label {
-        height: 10px;
-        width: 10px;
+        height: 0.9em;
+        width: 1em;
         border-radius: 50%;
-        border: 1.5px solid blanchedalmond;
+        border: 0.06em solid blanchedalmond;
         align-items: center;
     }
     label:hover .inner-label {
         background-color: rgb(230, 145, 18);
-        border: 1px solid blanchedalmond;
+        border: 0.06em solid blanchedalmond;
         transform: scale(1.2);
         transition: 1s;
     }
@@ -180,6 +179,7 @@
         .slider-container {
             max-width: 85vw;
             grid-template-columns: 1fr;
+            row-gap: 1em;
             
         }
         .image-cont {
