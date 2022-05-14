@@ -28,7 +28,7 @@ body {
     }
     
     .images {
-        background-size: 100%;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         width: 20%;
@@ -199,5 +199,16 @@ body {
         .image-cont {
             height: 40vh;
             
+        }
+    }
+
+    @media screen and (min-width:1400px) {
+        .image-cont {
+            height: 80vh;
+           
+        }
+        
+        .slider-container {
+            max-width: 60vw;
         }
     }
