@@ -6,16 +6,15 @@
     
 body {
         background-color: #857e1e;
+        max-height: 100vh;
 }
    
 .slider-container {
     max-width: 70vw;
     display: grid;
-    width: 100%;
-    height: 100% ;
-    row-gap: 2em;
+    row-gap: 3em;
     grid-template-columns: 1fr 1fr;
-    margin: 5vh auto;
+    margin: 4% auto;
     overflow: hidden;
     }
     
@@ -24,7 +23,7 @@ body {
         display: flex;
         flex-direction: row;
         width: 500%;
-        height: 60vh;
+        height: 50vw;
     }
     
     .images {
@@ -177,14 +176,15 @@ body {
     
     @media screen and (max-width:768px) {
         .slider-container {
-            max-width: 85vw;
+            max-width: 85.5vw;
             grid-template-columns: 1fr;
-            row-gap: 1em;
+            row-gap: 3em;
+            margin-top: 10%;
             
         }
         .image-cont {
             grid-column: 1/2;
-            height: 50vh;
+            height: 57vw;
         }
         .control {
             grid-row: 2/3;
@@ -195,20 +195,14 @@ body {
         }
         
     }
-    @media screen and (max-width:480px) {
-        .image-cont {
-            height: 40vh;
-            
-        }
-    }
-
+    
     @media screen and (min-width:1400px) {
         .image-cont {
-            height: 80vh;
+            height: 35vw;
            
         }
         
         .slider-container {
-            max-width: 60vw;
+            max-width: 50vw;
         }
     }
