@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+    
+body {
+        background-color: #857e1e;
+        max-height: 100vh;
+}
+   
+.slider-container {
+    max-width: 70vw;
+    display: grid;
+    row-gap: 3em;
+    grid-template-columns: 1fr 1fr;
+    margin: 4% auto;
+    overflow: hidden;
+    }
+    
+    .image-cont {
+        grid-column: 1/3;
+        display: flex;
+        flex-direction: row;
+        width: 500%;
+        height: 50vw;
+    }
+    
+    .images {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 20%;
+        height: 100%;
+        transition:ease-in-out 0.8s;
+        opacity: 0;
+        z-index: 0;
+        }
+    
+    .images:nth-child(1) {
+        background-image:url(img1.jpg); 
+    }
+    
+    .images:nth-child(2) {
+        background-image: url(img2.jpg); 
+    }
+    
+    .images:nth-child(3) {
+        background-image:url(img3.jpg); 
+    }
+    
+    .images:nth-child(4) {
+        background-image:url(img4.jpg); 
+    }
+    .images:nth-child(5) {
+        background-image: url(img5.jpg); 
+    }
+    
+    .texts {
+        display: flex;
+        flex-direction: row;
+        width: 500%;
+        height: 100%;
+        margin-left: -400%;
+        transition: ease-in-out 0.8s;
+    }
+
+    .text {
+        color: blanchedalmond;
+        font: 22px "caveat";
+        width: 20%;
+        opacity: 0;
+        z-index: 0;
+        
+    }
+       
+    input {
+        display: none;
+    }
+    
+    .control {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+            
+    label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 1.6em;
+        width: 1.6em;
+        margin-left: 1.1em;
+        padding: 0.4em;
+        position: relative;
+    }
+    
+    .inner-label {
+        height: 0.9em;
+        width: 1em;
+        border-radius: 50%;
+        border: 0.06em solid blanchedalmond;
+        align-items: center;
+    }
+    label:hover .inner-label {
+        background-color: rgb(230, 145, 18);
+        border: 0.06em solid blanchedalmond;
+        transform: scale(1.2);
+        transition: 1s;
+    }
+    
+    #slide1:checked~.image-cont > .images:nth-child(1), #slide1:checked~.texts>.text:nth-child(5) {
+       opacity: 1; 
+       z-index: 1;
+    }
+   
+    #slide2:checked~.image-cont > .images:nth-child(1) {
+        margin-left: -20%;
+    }
+
+    #slide2:checked~.texts {
+        margin-left: -300%;
+    }
+           
+    #slide2:checked~.image-cont > .images:nth-child(2), #slide2:checked~.texts>.text:nth-child(4)  {
+        opacity: 1;
+        z-index: 1;
+    }
+   
+    #slide3:checked~.image-cont > .images:nth-child(2) {
+        margin-left: -40%;
+    }
+    #slide3:checked~.texts {
+        margin-left: -200%;
+    }
+
+    #slide3:checked~.image-cont > .images:nth-child(3), #slide3:checked~.texts>.text:nth-child(3) {
+        opacity: 1;
+        z-index: 1;
+        
+    }
+    
+    #slide4:checked~.image-cont > .images:nth-child(3) {
+        margin-left: -60%;
+    }
+    #slide4:checked~.texts {
+        margin-left: -100%;
+    }
+
+    #slide4:checked~.image-cont > .images:nth-child(4), #slide4:checked~.texts>.text:nth-child(2)  {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    #slide5:checked~.image-cont > .images:nth-child(4) {
+        margin-left: -80%;
+    }
+    #slide5:checked~.texts {
+        margin-left: 0%;
+    }
+
+     #slide5:checked~.image-cont > .images:nth-child(5), #slide5:checked~.texts>.text:nth-child(1) {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    #slide1:checked~.control label[for=slide1]>.inner-label,
+    #slide2:checked~.control label[for=slide2]>.inner-label,
+    #slide3:checked~.control label[for=slide3]>.inner-label,
+    #slide4:checked~.control label[for=slide4]>.inner-label,
+    #slide5:checked~.control label[for=slide5]>.inner-label {
+        background-color: blanchedalmond;
+    }
+    
+    @media screen and (max-width:768px) {
+        .slider-container {
+            max-width: 85.5vw;
+            grid-template-columns: 1fr;
+            row-gap: 3em;
+            margin-top: 10%;
+            
+        }
+        .image-cont {
+            grid-column: 1/2;
+            height: 57vw;
+        }
+        .control {
+            grid-row: 2/3;
+            justify-content: center;
+        }
+        .texts {
+            grid-row: 3/4;
+        }
+        
+    }
+    
+    @media screen and (min-width:1400px) {
+        .image-cont {
+            height: 35vw;
+           
+        }
+        
+        .slider-container {
+            max-width: 50vw;
+        }
+    }
